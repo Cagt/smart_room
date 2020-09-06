@@ -11,7 +11,7 @@ port = 'COM6'
 bitspeed = 9600
 ser = serial.Serial(port,bitspeed,bytesize=8,parity='N',stopbits = 1,timeout=0.5,rtscts=False)
 
-robot_key = '2a2f8fa764f64cc8b63ca3fb0ffa9154'
+robot_key = ''	#Add your code on here
 happy_pic = ['.\\expression\\happy1.jpg','.\\expression\\happy2.jpg']
 sad_pic = ['.\\expression\\sad1.jpg','.\\expression\\sad2.jpg']
 
@@ -41,7 +41,7 @@ def reply_handle(msg):
 	else:
 
 		data = {
-			"key":u"2a2f8fa764f64cc8b63ca3fb0ffa9154",
+			"key":u"",	#Add your key on here
 		    "info":msg['Text']
 		}
 		rep = requests.post(url='http://www.tuling123.com/openapi/api',data=data).json()
@@ -66,6 +66,6 @@ itchat.auto_login(hotReload = True)
 # for frined in frinedList:
 # 	print frined['UserName']
 # itchat.send(u'Hello world.By robot',u'lzk66666666666666')
-# author = itchat.search_friends(nickName = u'柳泽凯')[0]
+# author = itchat.search_friends(nickName = u'')[0]
 # author.send('Hello world.By robot')
 itchat.run()
